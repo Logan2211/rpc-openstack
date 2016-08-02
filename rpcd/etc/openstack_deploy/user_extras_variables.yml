@@ -133,3 +133,9 @@ secure_cluster_flags:
 # We need to exclude the original so that upgrades will work smoothly.
 maas_excluded_checks:
   - cinder_volume_check
+
+# Based on https://github.com/rcbops/rpc-openstack/issues/1149
+# L3HA has to be disabled until all major issues are fixed
+neutron_neutron_conf_overrides:
+  DEFAULT:
+    l3_ha: False
